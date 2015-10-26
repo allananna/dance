@@ -1,0 +1,108 @@
+<?php
+session_start();
+
+if(!$_SESSION['email']){
+    header("location: signup.php");
+}
+?>
+<html>
+    <head>
+        <title>Contacts</title>
+            <link rel="stylesheet" href="CDN/bootstrap.min.css">
+            <script src="CDN/jquery.min.js"></script>
+            <script src="CDN/bootstrap.min.js"></script>
+
+            <link href="css/bootstrap.css" rel="stylesheet">
+            <link href="css/full-slider.css" rel="stylesheet">
+            <style type="text/css">
+            body{
+               background-image:url(images/backg.jpg);
+				background-attachment:fixed;
+            }
+			h1,h4 {
+				color:#FFF;
+				}
+            .container {
+
+                padding: 10px;
+                border-radius: 50px;
+
+            }
+            
+            #myCarousel{
+                height:500px;
+            }
+            </style>   
+    </head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="height:100px; top:0px; left:0px; right:0px; ">
+                <center><img src="images/nd_dance_academy_logo.png" alt="dance_header_img" width="320" height="100"></center>
+            </div>
+
+            <div class="col-sm-6" style="height:100px;">
+                <b>Welcome:</b><br>
+                <font color='red' size='2'>
+                    <?php
+                        echo $_SESSION['email'];
+                    ?>
+                </font>
+                   
+                    <a href="logout.php">Logout</a>
+                
+                </font>
+            </div>
+
+            <div class="col-sm-12">
+
+                <ul class="nav nav-pills nav-justified">         <!-- nav-stacked -->
+                    <li ><a href="home.php">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="news.php">News</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+                
+            </div>
+            
+            <div class="col-sm-8">
+                <h1> Contact : </h1>
+                <span style="color:#FFF">Tops Technologies<br/>
+                Address : A-301, Megh Malhar Complex, Sector 11, Gandhinagar, Gujarat<br>
+                Phone No :- 9898989898</span>
+                <h4>Email : allanshah40@yahoo.in </h4>
+                
+            </div>
+
+            <div class="col-sm-4">
+                <img src="images/Kuchipudi-Dance.jpg" alt="dance" width="350px" height="460px">
+            </div>
+
+            
+
+            <div class="footer">
+            <div class="col-sm-12" style="height:100px;">
+                    <font color="#000066" face="Georgia, Times New Roman, Times, serif">    
+                    <font size="5">Dance Tube © 2015 | <a href="#">Privacy Policy</a></font>
+                    </font>
+            </div>
+        </div>
+
+        </div>
+    </div>
+     <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+    
+</body>
+</html>
